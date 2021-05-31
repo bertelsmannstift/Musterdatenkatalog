@@ -1,0 +1,8 @@
+sklearn
+spacy
+pandas
+numpy
+scapy
+git+git://github.com/dtuggener/CharSplit@master#egg=charsplit
+pytest
+proof
