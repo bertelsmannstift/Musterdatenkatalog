@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:locn="http://www.w3.org/ns/locn#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dcat="http://www.w3.org/ns/dcat#"
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:adms="http://www.w3.org/ns/adms#"
+  xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+  xmlns:dcatde="http://dcat-ap.de/def/dcatde/"
+>
+  <dcat:Dataset rdf:about="url">
+    <dcat:distribution>
+      <dcat:Distribution rdf:about="https://daten.rlp.de/dataset/489dd4f1-ca39-471d-ab6b-eae42d1faf3c/resource/36d2cca9-a3b8-741b-4dc0-6976e98ad427_iso19139">
+        <dct:format>HTML</dct:format>
+        <dct:description>Distribution Description</dct:description>
+        <dcat:accessURL rdf:resource=""/>
+        <dct:license rdf:resource="license"/>
+        <dct:title>Distribution Title</dct:title>
+      </dcat:Distribution>
+    </dcat:distribution>
+    <dct:accrualPeriodicity rdf:resource="http://inspire.ec.europa.eu/metadata-codelist/MaintenanceFrequencyCode/notPlanned"/>
+    <dct:accessRights>Nutzungsbedingungen: Creative Commons CC BY 4.0</dct:accessRights>
+    <dcat:keyword>bebauungsplan</dcat:keyword>
+    <dcat:distribution>
+      <dcat:Distribution rdf:about="https://ckan.www.open.nrw.de/dataset/8bf1c4e6-a102-4c7b-9ec1-edf83581d3e0/resource/cf589c47-adfc-42c1-b89c-eb9e0ad38c57">
+        <dct:license rdf:resource="license"/>
+        <dcat:downloadURL rdf:resource="https://daten.wuppertal.de/Geografie_Geologie_Geodaten/Hoehenlinien-20M-freigestellt_EPSG25832_SHAPE.zip"/>
+        <dct:title>Distribution Title</dct:title>
+        <dct:format>Shape</dct:format>
+        <dct:description>Distribution Description</dct:description>
+      </dcat:Distribution>
+    </dcat:distribution>
+    <dcat:contactPoint>
+      <vcard:Organization rdf:nodeID="N196e03dc634e43b490e0280683032ce6">
+        <vcard:hasEmail rdf:resource="mailto:tanja.verstege@stadt.wuppertal.de"/>
+        <vcard:hasLocality>Wuppertal</vcard:hasLocality>
+        <vcard:fn>Stadt Wuppertal</vcard:fn>
+        <vcard:hasPostalCode>42275</vcard:hasPostalCode>
+        <vcard:hasCountryName>Deutschland</vcard:hasCountryName>
+        <vcard:hasStreetAddress>Johannes-Rau-Platz 1</vcard:hasStreetAddress>
+      </vcard:Organization>
+    </dcat:contactPoint>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-02-14T00:00:00</dct:issued>
+    <dcat:keyword>bauleitplan</dcat:keyword>
+    <dcatde:maintainer>
+      <foaf:Organization rdf:nodeID="N8a9b9d5207df4aa893dc09c854f2b76f">
+        <foaf:mbox>tanja.verstege@stadt.wuppertal.de</foaf:mbox>
+        <foaf:name>Verbandsgemeinde Altenahr</foaf:name>
+      </foaf:Organization>
+    </dcatde:maintainer>
+    <dct:publisher>
+      <foaf:Organization rdf:about="https://ckan.www.open.nrw.de/organization/bf389131-4b9f-4756-8163-958d41ce49de">
+        <foaf:name>Geoportal</foaf:name>
+      </foaf:Organization>
+    </dct:publisher>
+    <dct:identifier>12345</dct:identifier>
+    <adms:identifier>8bf1c4e6-a102-4c7b-9ec1-edf83581d3e0</adms:identifier>
+    <dct:language rdf:resource="http://publications.europa.eu/resource/authority/language/GER"/>
+    <dct:title>Dataset Title</dct:title>
+    <dcatde:contributorID rdf:resource="http://dcat-ap.de/def/contributors/openNRW"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-02-10T00:00:00</dct:modified>
+    <dct:description>Description</dct:description>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/TRAN"/>
+    <dcat:theme rdf:resource="http://publications.europa.eu/resource/authority/data-theme/ECON"/>
+    <dct:type>http://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset</dct:type>
+  </dcat:Dataset>
+</rdf:RDF>
