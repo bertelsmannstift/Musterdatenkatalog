@@ -21,14 +21,16 @@ def prepare_data(raw_data):
 
 
 def probability(filename, model_file):
+    '''
+    save probabilties as well for crowdsourcing tool
+    '''
     raw_data = pd.read_csv(filename, dtype=str)
     model = load_model(model_file)
     data = prepare_data(raw_data)
     proba = model.predict_proba(data)
 
-    print(proba)
     #save probabilities
-    probablilty_result_filename = f"mdk_predicted_probability_result_{datetime.now().strftime('%Y%m%d-%H%M%S')}.csv"
+    probablilty_result_filename = f"mdk_predicted_probability_result_{datetime.now().strftime('%Y%m%d')}.csv"
     outfile = open(probablilty_result_filename, "wb")
     pickle.dump(proba, outfile)
     outfile.close()
@@ -43,12 +45,12 @@ def predict(filename, model_file):
     result = model.predict(data)
     raw_data["MUSTERDATENSATZ"] = result
 
-    result_filename = f"results/mdk_predicted_result_{datetime.now().strftime('%Y%m%d-%H%M%S')}.csv"
+    result_filename = f"/mdk_predicted_result_{datetime.now().strftime('%Y%m%d')}.csv"
     raw_data.to_csv(result_filename, index=False)
 
 def main():
-    model_filename = "models/model_86.020210219-113102.pickle"
-    predict("predicting/govdata_results_20210301-153233.csv", model_filename)
+    model_filename = "model.pickle"
+    predict("govdata/results.csv", model_filename)
 
 if __name__ == "__main__":
     main()
