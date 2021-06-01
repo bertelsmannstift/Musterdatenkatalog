@@ -10,6 +10,20 @@ from skpipelines import model_pipeline
 TF_COS_COLUMNS = ['dct:title', 'dcat:theme']
 TFIDF_COLUMNS = ['dct:description']
 
+def save_model(model, timestamped=False):
+    if timestamped:
+        model_name = f"model_{datetime.now().strftime('%Y%m%d-%H%M%S')}.pickle"
+    else:
+        model_name = "model.pickle"
+    # Save model
+    models_path = os.path.join(os.path.dirname(__file__), "models")
+    if not os.path.exists(models_path):
+        os.makedirs(models_path)
+    full_path = os.path.join(models_path, model_name)
+    with open(full_path, "wb") as f:
+        dump(model, f)
+
+
 def load_data(data):
     # Load the data
     data['table'] = pd.read_csv('training.csv')
@@ -37,6 +51,7 @@ def split_test_training(data):
 @proof.never_cache
 def train(data):
     model_pipeline.fit(data['features_train'], data['labels_train'])
+    save_model(model_pipeline)
     y_pred = model_pipeline.predict(data['features_test'])
     score = accuracy_score(data['labels_test'], y_pred)
     print(f"Accuracy score: {score}")
