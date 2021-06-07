@@ -19,18 +19,18 @@ Das Modell wird trainiert mit Hilfe der folgenden Spalten (Features genannt):
 * Kategorie des Datensatzes
 
 ### Classifier
-Benutzt wurde ein Nächste-Nachbarn-Klassifikation (K-Nearest Neighbor Classifier).  
+Benutzt wurde ein [Nächste-Nachbarn-Klassifikation](https://www.dbs.ifi.lmu.de/Lehre/KDD/WS0304/Skript/kdd-3-klassifikation2.pdf) (K-Nearest Neighbor Classifier).  
 
 Durch Cross-Validation wurden die besten Parameter des Modells bestimmt und justiert.
 
 
 ## Aufbereitung der Daten mittels NLP
 
-Für die Aufbereitung der Titel, Beschreibungen und Themen wurde __spacy__ verwendet.  
+Für die Aufbereitung der Titel, Beschreibungen und Themen wurde [__spacy__](https://spacy.io) verwendet.  
 
 ### Wörter entfernen
 
-In allen Schritten wurden bestimmte Wörter entfernt. Die ganze Liste ist in `remove_words.csv` zu finden. Diese enthält hauptsächlich die Namen aller Kommunen.  
+In allen Schritten wurden bestimmte Wörter entfernt. Die ganze Liste ist in [remove_words.csv](/remove_words.csv) zu finden. Diese enthält hauptsächlich die Namen aller Kommunen im Trainingsdatensatz.  
 Außerdem wurden Zahlen und Sonderzeichen entfernt.  
 
 #### Warum werden die Namen der Kommunen entfernt?
