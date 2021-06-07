@@ -19,7 +19,7 @@ Der bundesweite Musterdatenkatalog wird automatisiert mit einem Algorithmus erst
 * Der Vorgänger des bundesweiten Musterdatenkatalogs, der NRW-Katalog, wurde mit seinen rund 2.500 Datensätzen manuell zugeordnet. Und selbst bei einer manuellen Zuordnung gibt es gelegentlich Fehler. Auch ein Algorithmus funktioniert nicht perfekt. 
 * Mit einer breiteren Datenbasis wird der Algorithmus sich kontinuierlich verbessern. Außerdem hoffen wir, dass der Musterdatenkatalog auch einen Impuls setzen kann, damit Kommunen ihre Metadaten besser und eindeutiger beschreiben. 
 
-Mehr Informationen [hier](/ml_modell).
+Mehr Informationen [hier](/ml_model).
 
 ## Fragen & Antworten
 
