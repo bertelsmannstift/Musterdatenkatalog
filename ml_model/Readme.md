@@ -30,8 +30,7 @@ Für die Aufbereitung der Titel, Beschreibungen und Themen wurde [__spacy__](htt
 
 ### Wörter entfernen
 
-In allen Schritten wurden bestimmte Wörter entfernt. Die ganze Liste ist in [remove_words.csv](/remove_words.csv) zu finden. Diese enthält hauptsächlich die Namen aller Kommunen im Trainingsdatensatz.  
-Außerdem wurden Zahlen und Sonderzeichen entfernt.  
+In allen Schritten wurden bestimmte Wörter entfernt. Die ganze Liste ist in [remove_words.csv](/remove_words.csv) zu finden. Diese enthält hauptsächlich die Namen aller Kommunen im Trainingsdatensatz. Außerdem wurden Zahlen und Sonderzeichen entfernt.  
 
 #### Warum werden die Namen der Kommunen entfernt?
 
@@ -39,13 +38,12 @@ Viele Kommunen betiteln ihre Datensätze nach: _Stadt Bonn: Abfallkalender_, fü
 
 ### Lemmatisierung
 
-Lemmatisierung ist eine Unterkategorie des Stemming.  
-Das Stemming ist dazu da Wörter zu einem Stammwort zurückzuführen. Zum Beispiel _laufen_ und _gelaufen_ werden zu _laufen_.
-Lemmatisierung geht einen Schritt weiter und schaut sich auch die Bedeutung eines Wortes an um dessen Stam zu finden.
+Lemmatisierung ist eine Unterkategorie des Stemming. Das Stemming ist dazu da Wörter zu einem Stammwort zurückzuführen. Zum Beispiel _laufen_ und _gelaufen_ werden zu _laufen_. Lemmatisierung geht einen Schritt weiter und schaut sich auch die Bedeutung eines Wortes an um dessen Stam zu finden.
 
 ### Zusammengesetzte Wörter
 
-Für den Titel wurde noch eine weitere Transformation angewendet. Aufsplittung der Wörter in ihre Bestandteile.  
+Für den Titel wurde noch eine weitere Transformation angewendet: Aufsplittung der Wörter in ihre Bestandteile.  
+
 Dazu wurde eine Umsetzung der folgenden Arbeit benutzt:
 Tuggener, Don (2016). Incremental Coreference Resolution for German. University of Zurich, Faculty of Arts.
 
@@ -59,14 +57,14 @@ Für die Beschreibung haben wir zusätzlich HTML Code entfernt. Viele Kommunen b
 
 ## Installation & Ausführen
 
-Zum ausführen des Machine Learning Modells müssen zuerst die Pakete installiert werden.
+Zum Ausführen des Machine-Learning-Modells müssen zuerst die Pakete installiert werden.
 
 ```
 pip install -r requirements.txt
 ```
 
 
-Anschließend kann das Modell entweder trainiert werden, oder neuen Datensätze Musterdatensätze zugeordnet werden.  
+Anschließend kann das Modell entweder trainiert werden, oder neue Datensätze Musterdatensätzen zugeordnet werden.  
 
 ### Trainieren
 Zum trainieren, wird folgender Code ausgeführt: 
@@ -75,12 +73,12 @@ Zum trainieren, wird folgender Code ausgeführt:
 python train.py
 ```
 
-Das Ergebnis ist eine sklearn model, welches verwendet werden kann auf neue Daten.
+Das Ergebnis ist ein sklearn model, welches auf neue Daten verwendet werden kann.
 
 
 ### Vorhersagen
 
-Zum vorhersagen von neuen Daten wird der folgende Code benutzt:
+Zum Vorhersagen von neuen Daten wird der folgende Code benutzt:
 
 ```
 python predict.py
