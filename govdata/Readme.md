@@ -9,6 +9,6 @@ Dieses ist in [/download](download) zu finden.
 
 ## Vorbereiten für ML Modell
 
-Zum filtern der vorhandenen Daten von govdata wird die Sammlung der Kommunen die auf govdata wahrscheinlich vertreten sind benutzt. Eine Erklärung findet sich hier.
+Zum Filtern der vorhandenen Daten von govdata wird die Sammlung der Kommunen die auf govdata wahrscheinlich vertreten sind benutzt. Eine Erklärung findet sich hier.
 
 
