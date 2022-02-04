@@ -1,0 +1,38 @@
+{{ define "nav"  }}
+{{ end }}
+{{ define "main"  }}
+{{- $thema := "" }}
+{{- $bezeichnung := "" }}
+{{- $titel := "" -}}
+<div class="">
+	<h1>Liste der Musterdatensätze</h1>
+	<p></p>
+</div>
+<div class="w-full mt-8">
+	<p>Andere Formate: <a href="">RDF</a>
+<table class="w-full divide-y divide-gray-200 mt-8 border-collapse">
+	<thead class="bg-gray-50">
+		<tr>
+			<th class="px-6 py-3 text-left text-xl font-bold text-gray-600 uppercase tracking-wider">URI</th>
+			<th class="px-6 py-3 text-left text-xl font-bold text-gray-600 uppercase tracking-wider">Name</th>
+			<th class="px-6 py-3 text-left text-xl font-bold text-gray-600 uppercase tracking-wider">Code</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{- $dataC := getCSV "," "/static/uri.csv"  -}}
+		{{- $uri := "" -}}
+		{{- range after 1 $dataC -}}
+		{{- $uri = ( printf "https://musterdatenkatalog.de/def/musterdaten/%s/%s" (index . 1) (index . 2) ) -}}
+		{{- $titel = (index . 0) -}}
+		{{- $thema = (index . 1) -}}
+		{{- $bezeichnung = (index . 2) -}}
+		<tr class="odd:bg-white even:bg-slate-100">
+			<td class="px-6 py-2 whitespace-nowrap text-lg font-medium text-gray-900"><a name="{{index . 1}}-{{index . 2}}">&nbsp;</a><a href="{{$uri}}">{{ $uri }}</td>
+			<td class="px-6 py-2 whitespace text-lg font-medium text-gray-900">{{- index . 0 -}}</td>
+			<td class="px-6 py-2 whitespace-nowrap text-lg font-medium text-gray-900">{{- $bezeichnung -}}</td>
+		</tr>
+		{{- end  -}}
+	</tbody>
+</table>
+</div>
+{{ end }}

@@ -1,0 +1,54 @@
+{{- $resource := "https://musterdatenkatalog.de/def/musterdaten" }}
+{{- $dataC := getCSV "," "/static/uri.csv"  }}
+{{- $uri := "" }}
+{{- $thema := "" }}
+{{- $bezeichnung := "" }}
+{{- $titel := "" -}}
+<xml version="1.0"?>
+<rdf:RDF xmlns="{{$resource}}"
+	xml:base="{{$resource}}"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:dcat="http://www.w3.org/ns/dcat#"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:org="http://www.w3.org/ns/org#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:skos-xl="http://www.w3.org/2008/05/skos-xl#"
+	xmlns:void="http://rdfs.org/ns/void#"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+>
+	<owl:Ontology rdf:about="{{$resource}}">
+		<owl:versionInfo>20211108</owl:versionInfo>
+		<owl:versionIRI rdf:resource="{{$resource}}"/>
+		<rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal"></rdfs:comment>
+	</owl:Ontology>
+	<skos:ConceptScheme rdf:about="{{$resource}}">
+		<rdfs:label xml:lang="de">Liste der Musterdatensätze</rdfs:label>
+		<skos:prefLabel xml:lang="de">Musterdatensätze</skos:prefLabel>
+		<dct:identifier>{{$resource}}</dct:identifier>
+	</skos:ConceptScheme>
+	{{- range after 1 $dataC -}}
+	{{- $uri = ( printf "https://musterdatenkatalog.de/def/musterdaten/%s/%s" (index . 1) (index . 2) ) -}}
+	{{- $titel = (index . 0) -}}
+	{{- $thema = (index . 1) -}}
+	{{- $bezeichnung = (index . 2) -}}
+	<skos:Concept rdf:about="{{$uri}}">
+		<dc:identifier>{{$bezeichnung}}</dc:identifier>
+		<skos:topConceptOf rdf:resource="{{$resource}}"/>
+		<skos:inScheme rdf:resource="{{$resource}}"/>
+		<skos:prefLabel xml:lang="de">{{$titel}}</skos:prefLabel>
+		<skos-xl:prefLabel>
+			<skos-xl:Label>
+				<rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
+				<skos-xl:literalForm xml:lang="de">{{$titel}}</skos-xl:literalForm>
+				<rdfs:label xml:lang="de">{{$titel}}</rdfs:label>
+			</skos-xl:Label>
+		</skos-xl:prefLabel>
+		<skos:exactMatch rdf:resource="{{$uri}}"/>
+		<skos:altLabel xml:lang="de">{{$bezeichnung}}</skos:altLabel>
+	</skos:Concept>
+	{{- end }}
+</rdf:RDF>
