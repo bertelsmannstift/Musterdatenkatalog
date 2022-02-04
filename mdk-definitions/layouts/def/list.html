@@ -1,0 +1,27 @@
+{{ define "main"  }}
+<div class="prose lg:prose-xl ">
+	{{.Content}}
+</div>
+<div class="w-full">
+	<h2>Vokabulare</h2>
+<table class="w-full divide-y divide-gray-200 mt-8 border-collapse">
+	<thead class="bg-gray-50">
+		<tr>
+			<th class="px-6 py-3 text-left text-xl font-bold text-gray-600 uppercase tracking-wider">Name</th>
+			<th class="px-6 py-3 text-left text-xl font-bold text-gray-600 uppercase tracking-wider">Version</th>
+			<th class="px-6 py-3 text-left text-xl font-bold text-gray-600 uppercase tracking-wider">Beschreibung</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{ range .Pages }}
+			<tr class="odd:bg-white even:bg-slate-100">
+				<td class="px-6 py-2 whitespace-nowrap text-lg font-medium text-gray-900"><a href="{{ .Permalink | relURL }}">{{.Title}}</a></td>
+				<td class="px-6 py-2 whitespace-nowrap text-lg font-medium text-gray-900">{{.Params.version}}</td>
+				<td class="px-6 py-2 whitespace-nowrap text-lg font-medium text-gray-900">{{.Params.description}}</td>
+			</tr>
+		{{ end }}
+	</tbody>
+</table>
+</div>
+{{ end }}
+

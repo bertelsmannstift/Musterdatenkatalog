@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{{- $style := resources.Get "css/styles.css" | resources.PostCSS (dict "config" "./assets/css/postcss.config.js")  -}}
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" href="{{ $style.Permalink  }}" />
+		<title>{{.Title}}</title>
+	</head>
+	<body>
+		<nav>
+		</nav>
+		<div class="">
+			{{ block "nav" .  }} {{ end  }}
+		</div>
+		<div class="container max-w-7xl mx-auto">
+		{{ block "main" .  }} {{ end  }}
+	</body>
+</html>

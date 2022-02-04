@@ -1,0 +1,16 @@
+baseURL = "/Musterdatenkatalog"
+languageCode = "de-DE"
+title = "Musterdatenkatalog Definitoonen"
+uglyurls = true
+
+[outputs]
+home = ['HTML']
+page = ['HTML', 'rdf']
+
+[mediaTypes]
+[mediaTypes."application/rdf"]
+suffixes = ["rdf"]
+
+[outputFormats]
+[outputFormats.rdf]
+mediaType = 'application/rdf'
