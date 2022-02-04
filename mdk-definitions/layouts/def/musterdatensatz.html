@@ -22,7 +22,7 @@
 		{{- $dataC := getCSV "," "/static/uri.csv"  -}}
 		{{- $uri := "" -}}
 		{{- range after 1 $dataC -}}
-		{{- $uri = ( printf "https://musterdatenkatalog.de/def/musterdaten/%s/%s" (index . 1) (index . 2) ) -}}
+		{{- $uri = ( printf "https://musterdatenkatalog.de/def/musterdatensatz/%s/%s" (index . 1) (index . 2) ) -}}
 		{{- $titel = (index . 0) -}}
 		{{- $thema = (index . 1) -}}
 		{{- $bezeichnung = (index . 2) -}}
