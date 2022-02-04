@@ -8,5 +8,6 @@ outputs:
 - rdf
 aliases: 
 - "/def/musterdatensatz/"
+- "/def/musterdatensatz/index.html"
 - "/def/musterdatensatz.html"
 ---

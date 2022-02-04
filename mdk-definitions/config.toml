@@ -2,6 +2,7 @@ baseURL = "/Musterdatenkatalog"
 languageCode = "de-DE"
 title = "Musterdatenkatalog Definitoonen"
 uglyurls = true
+disableKinds = ['taxonomy', 'term']
 
 [outputs]
 home = ['HTML']
