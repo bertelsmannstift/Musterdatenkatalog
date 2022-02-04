@@ -1,4 +1,4 @@
-{{- $resource := "https://musterdatenkatalog.de/def/musterdaten" }}
+{{- $resource := "https://musterdatenkatalog.de/def/musterdatensatz" }}
 {{- $dataC := getCSV "," "/static/uri.csv"  }}
 {{- $uri := "" }}
 {{- $thema := "" }}
@@ -31,7 +31,7 @@
 		<dct:identifier>{{$resource}}</dct:identifier>
 	</skos:ConceptScheme>
 	{{- range after 1 $dataC -}}
-	{{- $uri = ( printf "https://musterdatenkatalog.de/def/musterdaten/%s/%s" (index . 1) (index . 2) ) -}}
+	{{- $uri = ( printf "https://musterdatenkatalog.de/def/musterdatensatz/%s/%s" (index . 1) (index . 2) ) -}}
 	{{- $titel = (index . 0) -}}
 	{{- $thema = (index . 1) -}}
 	{{- $bezeichnung = (index . 2) -}}
