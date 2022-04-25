@@ -4,19 +4,18 @@
 {{- $thema := "" }}
 {{- $bezeichnung := "" }}
 {{- $titel := "" -}}
-{{- $rdf_link := "https://musterdatenkatalog.de/def/musterdatensatz.rdf" -}}
 <div class="">
 	<h1>Liste der Musterdatensätze</h1>
 	<p></p>
 </div>
 <div class="w-full mt-8">
-	<p>Andere Formate: <a href="{{- $rdf_link -}}">RDF</a>
+	<p>Andere Formate: <a href="{{- absURL "/def/musterdatensatz.rdf" -}}">RDF</a>
 <table class="w-full divide-y divide-gray-200 mt-8 border-collapse">
 	<thead class="bg-gray-50">
 		<tr>
 			<th class="px-6 py-3 text-left text-xl font-bold text-gray-600 uppercase tracking-wider">URI</th>
 			<th class="px-6 py-3 text-left text-xl font-bold text-gray-600 uppercase tracking-wider">Musterdatensatz</th>
-			<th class="px-6 py-3 text-left text-xl font-bold text-gray-600 uppercase tracking-wider">Code</th>
+			<th class="px-6 py-3 text-left text-xl font-bold text-gray-600 uppercase tracking-wider">URI Bezeichnung</th>
 		</tr>
 	</thead>
 	<tbody>
