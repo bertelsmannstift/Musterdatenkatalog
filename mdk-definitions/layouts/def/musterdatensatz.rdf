@@ -4,7 +4,7 @@
 {{- $thema := "" }}
 {{- $bezeichnung := "" }}
 {{- $titel := "" -}}
-<xml version="1.0"?>
+<?xml version="1.0"?>
 <rdf:RDF xmlns="{{$resource}}"
 	xml:base="{{$resource}}"
 	xmlns:dc="http://purl.org/dc/elements/1.1/"
