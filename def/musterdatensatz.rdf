@@ -1,4 +1,4 @@
-<xml version="1.0"?>
+&lt;?xml version="1.0"?>
 <rdf:RDF xmlns="https://musterdatenkatalog.de/def/musterdatensatz"
 	xml:base="https://musterdatenkatalog.de/def/musterdatensatz"
 	xmlns:dc="http://purl.org/dc/elements/1.1/"
