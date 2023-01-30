@@ -33,7 +33,7 @@ Nein. Der Musterdatenkatalog kann nicht automatisch bei jeder neuen Veröffentli
 Der Musterdatenkatalog wurde zunächst als Prototyp im Mai 2019 veröffentlicht. Der Erstellung des Prototypen gingen drei Workshops in Köln voraus, zu denen GovData und die Bertelsmann Stiftung mehr als 20 Expert\*innen aus der Open-Data-Community eingeladen haben. Die Ergebnisse der Workshops wurden in enger Abstimmung mit Vertreter\*innen der Städte Bonn, Düsseldorf, Köln und Moers sowie mit dem IT-Dienstleister kdvz Rhein-Erft-Rur vertieft und mündeten in dem im Mai 2019 veröffentlichten Prototypen. Dieser bildete die Grundlage für die anschließende Entwicklung eines NRW-Musterdatenkatalogs durch die Projektpartner Bertelsmann Stiftung, GovData, KDZ – Zentrum für Verwaltungsforschung und Open Knowledge Foundation Deutschland gemeinsam mit Open.NRW. Der bundesweite Musterdatenkatalog ist eine Weiterentwicklung des Prototoypen und der NRW-Version. Die technische Umsetzung des Musterdatenkatalogs erfolgte durch Mila Frerichs (Civic Vision). 
 
 ### In meiner Kommune wurden bereits Datensätze veröffentlicht, die im Musterdatenkatalog nicht auftauchen. Warum? 
-Im Musterdatenkatalog wurden offene Daten berücksichtigt, die bis zum Stichtag 15. Februar 2021 auffindbar waren. Daten, die nach diesem Stichtag veröffentlicht wurden, können erst nach einer Aktualisierung Eingang in den Musterdatenkatalog finden. 
+Im Musterdatenkatalog wurden offene Daten berücksichtigt, die bis zu einem jeweiligen Stichtag auffindbar waren. Daten, die nach diesem Stichtag veröffentlicht wurden, können erst nach einer weiteren Aktualisierung Eingang in den Musterdatenkatalog finden. 
 
 
 ## Weiterführende Links
