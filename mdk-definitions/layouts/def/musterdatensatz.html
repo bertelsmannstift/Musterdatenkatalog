@@ -5,22 +5,35 @@
 {{- $bezeichnung := "" }}
 {{- $titel := "" -}}
 {{- $rdf_link := "https://musterdatenkatalog.de/def/musterdatensatz.rdf" -}}
+{{- $version := .Page.Params.version -}}
+{{- $v1 := (le $version 20220301) }}
 <div class="">
 	<h1>Liste der Musterdatensätze</h1>
 	<p></p>
 </div>
-<div class="w-full mt-8">
+<div class="w-full mt-8 h-screen overflow-auto">
   <p>Andere Formate: <a href="{{- absURL "def/musterdatensatz.rdf" -}}">RDF</a>
+<div class="versions">
+	<form>
+		<select name="version" onchange="window.location='{{- absURL "def" -}}/'+this.options[this.selectedIndex].value+'/musterdatensatz.html';">
+			<option value="" >20230420</option>
+			<option value="20220303" {{ if $v1 }}selected{{- end -}}>20220303</option>
+	</select>
+	</form>
+</div>
 <table class="w-full divide-y divide-gray-200 mt-8 border-collapse">
-	<thead class="bg-gray-50">
+	<thead class="bg-gray-50 sticky top-0">
 		<tr>
-			<th class="px-6 py-3 text-left text-xl font-bold text-gray-600 uppercase tracking-wider">URI</th>
-			<th class="px-6 py-3 text-left text-xl font-bold text-gray-600 uppercase tracking-wider">Musterdatensatz</th>
-			<th class="px-6 py-3 text-left text-xl font-bold text-gray-600 uppercase tracking-wider">URI Bezeichnung</th>
+			{{- if $v1 -}}
+				{{ partial "partials/v1/table-header.html" }}
+			{{- else -}}
+				{{ partial "partials/table-header.html" }}
+			{{- end -}}
 		</tr>
 	</thead>
 	<tbody>
-		{{- $dataC := getCSV "," "/static/uri.csv"  -}}
+		{{- $filename := ( printf "/static/%d.csv" $version) -}}
+		{{- $dataC := getCSV "," $filename  -}}
 		{{- $uri := "" -}}
 		{{- range after 1 $dataC -}}
 		{{- $uri = ( printf "https://musterdatenkatalog.de/def/musterdatensatz/%s/%s" (index . 1) (index . 2) ) -}}
@@ -28,9 +41,11 @@
 		{{- $thema = (index . 1) -}}
 		{{- $bezeichnung = (index . 2) -}}
 		<tr class="odd:bg-white even:bg-slate-100">
-			<td class="px-6 py-2 whitespace-nowrap text-lg font-medium text-gray-900"><a name="{{index . 1}}-{{index . 2}}">&nbsp;</a><a href="{{$uri}}">{{ $uri }}</td>
-			<td class="px-6 py-2 whitespace text-lg font-medium text-gray-900">{{- index . 0 -}}</td>
-			<td class="px-6 py-2 whitespace-nowrap text-lg font-medium text-gray-900">{{- $bezeichnung -}}</td>
+			{{- if $v1 -}}
+				{{ partial "partials/v1/table-body.html" . }}
+			{{- else -}}
+				{{ partial "partials/table-body.html" . }}
+			{{- end -}}
 		</tr>
 		{{- end  -}}
 	</tbody>

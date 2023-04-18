@@ -1,0 +1,15 @@
+{{- $uri := "" -}}
+{{- $name := "" -}}
+{{- if index . 3 -}}
+{{ $name = (printf "%s-%s-%s" (index . 1) (index . 2) (index . 3)) }}
+{{- $uri = ( printf "https://musterdatenkatalog.de/def/musterdatensatz/%s/%s/%s" (index . 1) (index . 2) (index . 3)) -}}
+{{- else -}}
+{{ $name = (printf "%s-%s" (index . 1) (index . 2)) }}
+{{- $uri = ( printf "https://musterdatenkatalog.de/def/musterdatensatz/%s/%s" (index . 1) (index . 2) ) -}}
+{{- end -}}
+<td class="p-2 py-2 whitespace font-medium text-gray-900"><a name="{{ $name }}">&nbsp;</a>{{- index . 6 -}}</td>
+<td class="p-2 py-2 whitespace font-medium text-gray-900">{{- index . 7 -}}</td>
+<td class="p-2 py-2 whitespace-nowrap text-xs font-medium text-gray-900"><a href="{{$uri}}">{{ $uri }}</td>
+<td class="p-2 py-2 whitespace text-sm font-medium text-gray-900">{{- index . 9 -}}</td>
+<td class="p-2 py-2 whitespace text-sm font-medium text-gray-900">{{- index . 10 -}}</td>
+<td class="p-2 py-2 whitespace text-sm font-medium text-gray-900">{{- index . 11 -}}</td>
