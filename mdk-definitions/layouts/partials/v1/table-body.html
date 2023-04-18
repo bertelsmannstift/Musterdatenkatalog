@@ -1,0 +1,8 @@
+{{- $uri := "" -}}
+{{- $uri = ( printf "https://musterdatenkatalog.de/def/musterdatensatz/%s/%s" (index . 1) (index . 2) ) -}}
+{{- $titel := (index . 0) -}}
+{{- $thema := (index . 1) -}}
+{{- $bezeichnung := (index . 2) -}}
+<td class="px-6 py-2 whitespace-nowrap text-lg font-medium text-gray-900"><a name="{{$thema }}-{{$bezeichnung}}">&nbsp;</a><a href="{{$uri}}">{{ $uri }}</td>
+<td class="px-6 py-2 whitespace text-lg font-medium text-gray-900">{{- index . 0 -}}</td>
+<td class="px-6 py-2 whitespace-nowrap text-lg font-medium text-gray-900">{{- $bezeichnung -}}</td>
