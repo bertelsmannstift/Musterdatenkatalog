@@ -1,6 +1,9 @@
 {{- $resource := "https://musterdatenkatalog.de/def/musterdatensatz" }}
-{{- $dataC := getCSV "," "/static/uri.csv"  }}
-{{- $uri := "" }}
+{{- $version := .Page.Params.version -}}
+{{- $v1 := (le $version 20220301) }}
+{{- $filename := ( printf "/static/%d.csv" $version) -}}
+{{- $dataC := getCSV "," $filename  -}}
+{{- $uri := "" -}}
 {{- $thema := "" }}
 {{- $bezeichnung := "" }}
 {{- $titel := "" -}}
@@ -30,11 +33,22 @@
 		<skos:prefLabel xml:lang="de">Musterdatensätze</skos:prefLabel>
 		<dct:identifier>{{$resource}}</dct:identifier>
 	</skos:ConceptScheme>
+	{{- $name := "" -}}
 	{{- range after 1 $dataC -}}
-	{{- $uri = ( printf "https://musterdatenkatalog.de/def/musterdatensatz/%s/%s" (index . 1) (index . 2) ) -}}
+	{{- if index . 3 -}}
+	{{ $name = (printf "%s-%s-%s" (index . 1) (index . 2) (index . 3)) }}
+	{{ $bezeichnung = (printf "%s%s" (index . 2) (strings.FirstUpper (index . 3))) }}
+	{{- else -}}
+	{{ $name = (printf "%s-%s" (index . 1) (index . 2)) }}
+	{{- $bezeichnung = (index . 2) -}}
+	{{- end -}}
+	{{- if $v1 -}}
+		{{- $uri = ( printf "https://musterdatenkatalog.de/def/musterdatensatz/%s/%s" (index . 1) (index . 2) ) -}}
+	{{- else -}}
+		{{- $uri = ( printf "https://musterdatenkatalog.de/def/musterdatensatz/%s/%s/%s" (index . 1) (index . 2) (index . 3)) -}}
+	{{- end -}}
 	{{- $titel = (index . 0) -}}
 	{{- $thema = (index . 1) -}}
-	{{- $bezeichnung = (index . 2) -}}
 	<skos:Concept rdf:about="{{$uri}}">
 		<dc:identifier>{{$bezeichnung}}</dc:identifier>
 		<skos:topConceptOf rdf:resource="{{$resource}}"/>
@@ -48,7 +62,7 @@
 			</skos-xl:Label>
 		</skos-xl:prefLabel>
 		<skos:exactMatch rdf:resource="{{$uri}}"/>
-		<skos:altLabel xml:lang="de">{{$bezeichnung}}</skos:altLabel>
+		<skos:altLabel xml:lang="de">{{$name}}</skos:altLabel>
 	</skos:Concept>
 	{{- end }}
 </rdf:RDF>
