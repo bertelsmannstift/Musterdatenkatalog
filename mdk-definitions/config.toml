@@ -12,6 +12,10 @@ page = ['HTML', 'rdf']
 [mediaTypes."application/rdf"]
 suffixes = ["rdf"]
 
+[mediaTypes."application/xml"]
+suffixes = ["rdf"]
+
 [outputFormats]
 [outputFormats.rdf]
-mediaType = 'application/rdf'
+mediaType = 'application/xml'
+isPlainText = true
