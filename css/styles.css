@@ -364,6 +364,13 @@
 .prose > :where(:last-child):not(:where([class~="not-prose"] *)){
     margin-bottom: 0;
 }
+.sticky{
+    position: -webkit-sticky;
+    position: sticky;
+}
+.top-0{
+    top: 0px;
+}
 .mx-auto{
     margin-left: auto;
     margin-right: auto;
@@ -376,6 +383,9 @@
 }
 .table{
     display: table;
+}
+.h-screen{
+    height: 100vh;
 }
 .w-full{
     width: 100%;
@@ -395,12 +405,18 @@
     --tw-divide-opacity: 1;
     border-color: rgb(229 231 235 / var(--tw-divide-opacity));
 }
+.overflow-auto{
+    overflow: auto;
+}
 .whitespace-nowrap{
     white-space: nowrap;
 }
 .bg-gray-50{
     --tw-bg-opacity: 1;
     background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+.p-2{
+    padding: 0.5rem;
 }
 .px-6{
     padding-left: 1.5rem;
@@ -424,6 +440,14 @@
 .text-lg{
     font-size: 1.125rem;
     line-height: 1.75rem;
+}
+.text-xs{
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+.text-sm{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
 }
 .font-bold{
     font-weight: 700;
