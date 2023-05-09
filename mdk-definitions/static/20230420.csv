@@ -8,8 +8,8 @@ Abfallentsorgung - Müllgebühr,abfallentsorgung,muellgebuehr,,,,Abfallentsorgun
 Abfallentsorgung - Straßenreinigung,abfallentsorgung,strassenreinigung,,,,Abfallentsorgung,Straßenreinigung,,Reinigung öffentlicher Straßen und Plätze,waste disposal,street cleaning
 Bau - Baufertigstellung,bau,baufertigstellung,,,,Bau,Baufertigstellung,,"Bauvorhaben, deren Bauarbeiten weitgehend abgeschlossen sind",construction,construction completion
 Bau - Baugenehmigung,bau,baugenehmigung,,,,Bau,Baugenehmigung,,"Bauaufsichtsbehördlich erteilte Genehmigung zur Errichtung, Änderung oder Beseitigung eines Baus",construction,construction permit
-Bau - Baustelle,bau,baustelle,,,,Bau,Bauvorhaben,,Gesamter Planungs- und Arbeitsprozess zum Herstellen oder Verändern eines Bauobjekts,construction,building project
-Bau - Bauvorhaben,bau,bauvorhaben,,,,Bau,Baustelle,,"Orte, an denen Bauwerke errichtet, umgebaut oder abgerissen werden",construction,construction site
+Bau - Baustelle,bau,baustelle,,,,Bau,Baustelle,,"Orte, an denen Bauwerke errichtet, umgebaut oder abgerissen werden",construction,construction site
+Bau - Bauvorhaben,bau,bauvorhaben,,,,Bau,Bauvorhaben,,Gesamter Planungs- und Arbeitsprozess zum Herstellen oder Verändern eines Bauobjekts,construction,building project
 Bau - Brunnen,bau,brunnen,,,,Bau,Brunnen,,Brunnen und Teichfontänen,construction,fountain
 Bau - Grundstücksbewertung,bau,grundstuecksbewertung,,,,Bau,Grundstücksbewertung,,Wertermittlung für bebaute und unbebaute Grundstücke und grundstücksgleiche Rechte (Immobilien),construction,property valuation
 Bau - Tiefbau,bau,tiefbau,,,,Bau,Tiefbau,,Angaben zum Tätigkeitsbereich der Tiefbauämter,construction,underground construction
