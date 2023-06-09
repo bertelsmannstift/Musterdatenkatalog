@@ -12,7 +12,7 @@
 	<div>{{.Content}}</div>
 </div>
 <div class="w-full mt-8 h-screen overflow-auto">
-  <p>Anderes Format: <a href="{{- absURL "def/musterdatensatz.rdf" -}}">RDF</a>
+  <p>Anderes Format: <a href="{{- if $v1 -}}{{- absURL "def/musterdatensatz.rdf" -}}{{- else -}}https://huggingface.co/datasets/and-effect/MDK_taxonomy/raw/main/2023-05-17_musterdatenkatalog.rdf{{- end -}}">RDF</a>
 <div class="versions">
 	<form>
 		<select name="version" onchange="window.location='{{- absURL "def" -}}/'+this.options[this.selectedIndex].value+'/musterdatensatz.html';">
